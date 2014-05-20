@@ -1,0 +1,21 @@
+﻿th {
+    text-align:left;
+}
+tr.products:hover{
+    background-color:#66CCFF;
+}
+.values {
+    font-weight:bold;
+    font-size:14px;
+    padding-bottom:4px;
+}
+.tiptext {
+    font-style:italic;
+    font-size:10px;
+}
+.inWarranty {
+    color:green;
+}
+.outOfWarranty {
+    color:darkred;
+}
