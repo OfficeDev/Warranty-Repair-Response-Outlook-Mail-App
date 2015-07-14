@@ -8,4 +8,4 @@ It highlights the power of building a Outlook Mail add-in in Visual Studio 2013.
 
 You can view Steve's video here https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B319#fbid= at 29 minutes in.
 
-![](img/screenshot.png)
+![](img/screenshot.PNG)
