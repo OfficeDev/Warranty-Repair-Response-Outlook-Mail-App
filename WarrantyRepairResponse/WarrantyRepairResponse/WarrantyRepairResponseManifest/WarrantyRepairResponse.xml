@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+           xsi:type="MailApp">
   <Id>244589eb-1cd4-4884-94fe-cbef4368bf7c</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Steve Lasker</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Warranty Repair Response" />
   <Description DefaultValue="Sample Mail Compose App for Warranty Repair email responses"/>
+  <IconUrl DefaultValue="https://appcommandicons.blob.core.windows.net/images/taskpane_32x.png" />
   <SupportUrl DefaultValue="http://blogs.msdn.com/SteveLasker" />
   <Hosts>
     <Host Name="Mailbox" />
@@ -34,4 +39,70 @@
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
+  
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.3">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+
+        <DesktopFormFactor>
+          <FunctionFile resid="functionFile" />
+          
+          <!-- Message compose form -->
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="msgComposeDemoGroup">
+                <Label resid="groupLabel" />
+
+                <!-- Task pane button -->
+                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
+                  <Label resid="paneComposeButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneComposeSuperTipTitle" />
+                    <Description resid="paneComposeSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="green-icon-16" />
+                    <bt:Image size="32" resid="green-icon-32" />
+                    <bt:Image size="80" resid="green-icon-80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="composeTaskPaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <!-- icons -->
+        <bt:Image id="green-icon-16" DefaultValue="https://appcommandicons.blob.core.windows.net/images/taskpane_16x.png" />
+        <bt:Image id="green-icon-32" DefaultValue="https://appcommandicons.blob.core.windows.net/images/taskpane_32x.png" />
+        <bt:Image id="green-icon-80" DefaultValue="https://appcommandicons.blob.core.windows.net/images/taskpane_80x.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
+        <bt:Url id="composeTaskPaneUrl" DefaultValue="~remoteAppUrl/AppCompose/Home/Home.html" />        
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="Warranty Repair" />
+        <!-- Compose mode -->
+        <bt:String id="paneComposeButtonLabel" DefaultValue="Warranty Repair Response" />
+        <bt:String id="paneComposeSuperTipTitle" DefaultValue="Outlook Add-in" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <!-- Compose mode -->
+        <bt:String id="paneComposeSuperTipDescription" DefaultValue="Opens a pane where you can enter text to insert in the body of the message or appointment. This is an example of a button that opens a task pane." />
+
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
 </OfficeApp>
