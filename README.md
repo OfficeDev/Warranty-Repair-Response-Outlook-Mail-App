@@ -9,3 +9,6 @@ It highlights the power of building a Outlook Mail add-in in Visual Studio 2013.
 You can view Steve's video here https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B319#fbid= at 29 minutes in.
 
 ![Screenshot from the video of building a Outlook Mail add-in](img/screenshot.PNG)
+
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
