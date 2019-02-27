@@ -1,3 +1,16 @@
+---
+topic: sample
+products:
+- Outlook
+- Office 365
+languages:
+- JavaScript
+extensions:
+  contentType: samples
+  technologies:
+  - Add-ins
+  createdDate: 5/13/2014 12:52:12 PM
+---
 Warranty Repair Response Outlook Mail Add-in
 =========================================
 The Warranty Repair Response Outlook Mail add-in was a demo that Steve Lasker put together for TechEd 2014. 
